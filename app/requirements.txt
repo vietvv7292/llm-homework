@@ -1,0 +1,8 @@
+langchain
+langchain-community
+llama-cpp-python
+
+fastapi
+uvicorn
+pydantic
+requests
