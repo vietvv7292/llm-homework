@@ -1,0 +1,26 @@
+services:
+
+  llm:
+
+    build: ./app
+
+    container_name: chatbot-api
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./app:/app
+      - ./models:/models
+
+  web:
+
+    build: ./client
+
+    container_name: chatbot-web
+
+    ports:
+      - "3000:80"
+
+    depends_on:
+      - llm
